@@ -1,0 +1,16 @@
+﻿<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" routerLink="/user">User</a>
+    <a class="nav-item nav-link" routerLink="/product">Product</a>
+    <a class="nav-item nav-link" routerLink="/contact">Contact</a>
+    <a class="nav-item nav-link" routerLink="/service" *ngIf="isAdmin">Service</a>
+    <a class="nav-item nav-link" routerLink="/order" *ngIf="isAdmin">Order</a>
+    <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
